@@ -17,7 +17,7 @@ This project implements a basic payroll management system to handle employee inf
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/PayrollManagementSystem.git
+   git clone https://github.com/Hari-hara7/PayrollManagementSystem.git
    cd PayrollManagementSystem
 
    ## Technologies Used
@@ -44,13 +44,13 @@ This project implements a basic payroll management system to handle employee inf
 ### `TaxCalculator` Class
 
 - `calculateIncomeTax(double income)`: Calculates income tax based on the provided income.
-- ### `out put` Class
-- Enter Employee ID: 1
-Enter Employee Name: John Doe
+  ### `out put`
+   Enter Employee ID: 1
+Enter Employee Name: Hari
 Enter Basic Salary: 50000
 
 Employee ID: 1
-Employee Name: John Doe
+Employee Name:Hari
 Basic Salary: 50000.0
 Gross Salary: 60000.0
 Deductions: 6000.0
