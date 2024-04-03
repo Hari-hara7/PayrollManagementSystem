@@ -15,7 +15,7 @@ class Salary {
 
     public void calculateDeductions() {
         // Simple calculation, you may need to adjust based on your requirements
-        deductions = grossSalary * 0.1; // Assume 10% deductions
+        deductions = grossSalary * 0.1; // Assume 10% deductions201
     }
 
     public void calculateNetSalary() {
