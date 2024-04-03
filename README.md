@@ -13,7 +13,7 @@ The Employee Payroll Management System is a Java-based application designed to a
 The project is developed using the following technologies:
 - **Programming Language:** Java
 - **Libraries:** Java Standard Library
-- **Development Environment:** IDE (e.g., IntelliJ IDEA, Eclipse)
+- **Development Environment:** IDE (e.g. VS CODE)
 
 ## Getting Started
 To run the Employee Payroll Management System on your local machine, follow these steps:
