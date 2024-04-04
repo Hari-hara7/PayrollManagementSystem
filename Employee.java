@@ -10,9 +10,12 @@ public class Employee {
     private String email;
     private String phoneNumber;
     private Date dateOfBirth;
+    private String address;
+    private String gender;
+    private Date hireDate;
 
     public Employee(int employeeId, String name, double basicSalary, String department, String position, double allowances,
-                    String email, String phoneNumber, Date dateOfBirth) {
+                    String email, String phoneNumber, Date dateOfBirth, String address, String gender, Date hireDate) {
         this.employeeId = employeeId;
         this.name = name;
         this.basicSalary = basicSalary;
@@ -22,6 +25,9 @@ public class Employee {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.gender = gender;
+        this.hireDate = hireDate;
     }
 
     public int getEmployeeId() {
@@ -58,5 +64,17 @@ public class Employee {
 
     public Date getDateOfBirth() {
         return dateOfBirth;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+    
+    public String getGender() {
+        return gender;
+    }
+    
+    public Date getHireDate() {
+        return hireDate;
     }
 }

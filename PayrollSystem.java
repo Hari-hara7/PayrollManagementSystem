@@ -52,14 +52,36 @@ public class PayrollSystem {
             System.out.println("Invalid date format. Please enter date in yyyy-MM-dd format.");
             return;
         }
+        
+        System.out.print("Enter Address: ");
+        String address = scanner.nextLine();
+        
+        System.out.print("Enter Gender (Male/Female/Other): ");
+        String gender = scanner.nextLine();
+        
+        System.out.print("Enter Hire Date (yyyy-MM-dd): ");
+        String hireDateString = scanner.nextLine();
+        Date hireDate = null;
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            hireDate = dateFormat.parse(hireDateString);
+        } catch (ParseException e) {
+            System.out.println("Invalid date format. Please enter date in yyyy-MM-dd format.");
+            return;
+        }
 
-        Employee employee = new Employee(employeeId, name, basicSalary, department, position, allowances, email, phoneNumber, dateOfBirth);
+        
+
+        Employee employee = new Employee(employeeId, name, basicSalary, department, position, allowances,
+                                          email, phoneNumber, dateOfBirth, address, gender, hireDate);
         employees.add(employee);
     }
 
     public void processPayroll() {
+
         for (Employee employee : employees) {
             Salary salary = new Salary(employee);
+
             salary.calculateGrossSalary();
             salary.calculateDeductions();
             salary.calculateNetSalary();
@@ -70,7 +92,7 @@ public class PayrollSystem {
             // Calculate and display income tax
             double incomeTax = TaxCalculator.calculateIncomeTax(salary.getNetSalary());
             System.out.println("Income Tax: " + incomeTax);
-            System.out.println("----------------------------");
+           
         }
     }
 
@@ -81,7 +103,13 @@ public class PayrollSystem {
         System.out.println("Enter Employee Details:");
         payrollSystem.addEmployee();
 
+        // Display a visual separation
+        System.out.println("\n------------------------------------\n");
+
         // Process payroll
         payrollSystem.processPayroll();
+
+        // Display a visual separation after processing payroll
+        System.out.println("\n------------------------------------\n");
     }
 }
