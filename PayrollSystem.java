@@ -33,13 +33,23 @@ public class PayrollSystem {
 
         System.out.print("Enter Allowances: ");
         double allowances = scanner.nextDouble();
-        
+
+        System.out.print("Enter Health Insurance (Yes/No): ");
+        boolean hasHealthInsurance = scanner.next().equalsIgnoreCase("Yes");
+
+        System.out.print("Enter Retirement Plan (Yes/No): ");
+        boolean hasRetirementPlan = scanner.next().equalsIgnoreCase("Yes");
+
+        System.out.print("Enter Performance Rating (1-10): ");
+        int performanceRating = scanner.nextInt();
+
         scanner.nextLine(); // Consume the newline character
 
         System.out.print("Enter Email Address: ");
         String email = scanner.nextLine();
 
         System.out.print("Enter Phone Number: ");
+        
         String phoneNumber = scanner.nextLine();
 
         System.out.print("Enter Date of Birth (yyyy-MM-dd): ");
@@ -52,13 +62,13 @@ public class PayrollSystem {
             System.out.println("Invalid date format. Please enter date in yyyy-MM-dd format.");
             return;
         }
-        
+
         System.out.print("Enter Address: ");
         String address = scanner.nextLine();
-        
+
         System.out.print("Enter Gender (Male/Female/Other): ");
         String gender = scanner.nextLine();
-        
+
         System.out.print("Enter Hire Date (yyyy-MM-dd): ");
         String hireDateString = scanner.nextLine();
         Date hireDate = null;
@@ -70,18 +80,15 @@ public class PayrollSystem {
             return;
         }
 
-        
-
         Employee employee = new Employee(employeeId, name, basicSalary, department, position, allowances,
-                                          email, phoneNumber, dateOfBirth, address, gender, hireDate);
+                hasHealthInsurance, hasRetirementPlan, performanceRating,
+                email, phoneNumber, dateOfBirth, address, gender, hireDate);
         employees.add(employee);
     }
 
     public void processPayroll() {
-
         for (Employee employee : employees) {
             Salary salary = new Salary(employee);
-
             salary.calculateGrossSalary();
             salary.calculateDeductions();
             salary.calculateNetSalary();
@@ -92,7 +99,7 @@ public class PayrollSystem {
             // Calculate and display income tax
             double incomeTax = TaxCalculator.calculateIncomeTax(salary.getNetSalary());
             System.out.println("Income Tax: " + incomeTax);
-           
+            System.out.println("----------------------------");
         }
     }
 

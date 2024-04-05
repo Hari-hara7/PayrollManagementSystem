@@ -10,7 +10,7 @@ public class Salary {
 
     public void calculateGrossSalary() {
         // Simple calculation, you may need to adjust based on your requirements
-        grossSalary = employee.getBasicSalary() * 1.2; // Assume a 20% bonus
+        grossSalary = employee.getBasicSalary() + employee.getAllowances() * 1.2; // Include allowances and assume a 20% bonus
     }
 
     public void calculateDeductions() {
@@ -32,9 +32,13 @@ public class Salary {
         System.out.println("Department: " + employee.getDepartment());
         System.out.println("Position: " + employee.getPosition());
         System.out.println("Basic Salary: " + employee.getBasicSalary());
+        System.out.println("Allowances: " + employee.getAllowances());
         System.out.println("Gross Salary: " + grossSalary);
         System.out.println("Deductions: " + deductions);
         System.out.println("Net Salary: " + netSalary);
+        System.out.println("Has Health Insurance: " + employee.hasHealthInsurance());
+        System.out.println("Has Retirement Plan: " + employee.hasRetirementPlan());
+        System.out.println("Performance Rating: " + employee.getPerformanceRating());
         System.out.println("Email: " + employee.getEmail());
         System.out.println("Phone Number: " + employee.getPhoneNumber());
         System.out.println("Date of Birth: " + employee.getDateOfBirth());
